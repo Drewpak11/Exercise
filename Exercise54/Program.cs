@@ -1,41 +1,40 @@
 ﻿// Задача 54: Задайте двумерный массив. Напишите программу, которая упорядочит по убыванию элементы каждой строки двумерного массива.
 
-void FillMatrix(int[,] matrix)
+void FillArr(int[,] array)
 {
-    for(int i = 0; i < matrix.GetLength(0); i++)
+    for(int i = 0; i < array.GetLength(0); i++)
     {
-        for(int j = 0; j < matrix.GetLength(1); j++);
+        for(int j = 0; j < array.GetLength(1); j++);
     }
 }
 
-void PrintMatrix(int[,] matrix)
+void PrintArr(int[,] array)
 {
-    // Console.WriteLine("  Массив ");
     Console.WriteLine();
-    for (int i = 0; i < matrix.GetLength(0); i++)
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-        for (int j = 0; j < matrix.GetLength(1); j++)
+        for (int j = 0; j < array.GetLength(1); j++)
         {
-            Console.Write($"{matrix[i, j]} |");
+            Console.Write($"[{array[i, j]}]");
         }
         Console.WriteLine();
     }
 }
 
-void Result(int[,] matrix)
+void Result(int[,] array)
 {
     int help = 0;
-    for (int i = 0; i < matrix.GetLength(0); i++)
+    for (int i = 0; i < array.GetLength(0); i++)
 {
-    for (int j = 0; j < matrix.GetLength(1) - 1; j++)
+    for (int j = 0; j < array.GetLength(1) - 1; j++)
     {
-        for (int z = 0; z < matrix.GetLength(1) - 1; z++)
+        for (int z = 0; z < array.GetLength(1) - 1; z++)
         {
-            if (matrix[i, z] < matrix[i, z + 1]) 
+            if (array[i, z] < array[i, z + 1]) 
             {
-                help = matrix[i, z];
-                matrix[i, z] = matrix[i, z + 1];
-                matrix[i, z + 1] = help;
+                help = array[i, z];
+                array[i, z] = array[i, z + 1];
+                array[i, z + 1] = help;
             }
         }
     }
@@ -45,12 +44,12 @@ Console.WriteLine("Массив с упорядоченными значения
 }
 
 
-int[,] matrix = {{5, 8, 1, 6},
+int[,] array = {{5, 8, 1, 6},
                  {2, 7, 3, 4},
                  {11, 5, 17, 9},
                  {3, 10, 13, 8}};
-FillMatrix(matrix);
+FillArr(array);
 Console.WriteLine("Массив:");
-PrintMatrix(matrix);    
-Result(matrix);       
-PrintMatrix(matrix);   
+PrintArr(array);    
+Result(array);       
+PrintArr(array);   
